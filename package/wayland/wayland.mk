@@ -4,9 +4,14 @@
 #
 ################################################################################
 
-WAYLAND_VERSION = 1.5.0
-WAYLAND_SITE = http://wayland.freedesktop.org/releases
-WAYLAND_SOURCE = wayland-$(WAYLAND_VERSION).tar.xz
+#WAYLAND_VERSION = 1.5.0
+#WAYLAND_SITE = http://wayland.freedesktop.org/releases
+#WAYLAND_SOURCE = wayland-$(WAYLAND_VERSION).tar.xz
+
+WAYLAND_VERSION = HEAD
+WAYLAND_SITE = git://anongit.freedesktop.org/wayland/wayland
+WAYLAND_AUTORECONF = YES
+
 WAYLAND_LICENSE = MIT
 WAYLAND_LICENSE_FILES = COPYING
 
