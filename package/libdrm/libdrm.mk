@@ -4,10 +4,13 @@
 #
 ################################################################################
 
-LIBDRM_VERSION = 2.4.56
-LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.bz2
-LIBDRM_SITE = http://dri.freedesktop.org/libdrm
+#LIBDRM_VERSION = 2.4.56
+LIBDRM_VERSION = HEAD
+#LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.bz2
+#LIBDRM_SITE = http://dri.freedesktop.org/libdrm
+LIBDRM_SITE = git://people.freedesktop.org/~tagr/drm
 LIBDRM_LICENSE = MIT
+LIBDRM_AUTORECONF = YES
 
 LIBDRM_INSTALL_STAGING = YES
 
@@ -34,6 +37,7 @@ endif
 
 ifeq ($(BR2_PACKAGE_LIBDRM_NOUVEAU),y)
 LIBDRM_CONF_OPT += --enable-nouveau
+LIBDRM_CONF_OPT += --enable-tegra-experimental-api
 else
 LIBDRM_CONF_OPT += --disable-nouveau
 endif
