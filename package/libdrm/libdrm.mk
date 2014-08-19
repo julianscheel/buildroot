@@ -4,10 +4,14 @@
 #
 ################################################################################
 
-LIBDRM_VERSION = 2.4.58
-LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.bz2
-LIBDRM_SITE = http://dri.freedesktop.org/libdrm
+#LIBDRM_VERSION = 2.4.58
+#LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.bz2
+#LIBDRM_SITE = http://dri.freedesktop.org/libdrm
+LIBDRM_VERSION = gk20a
+LIBDRM_SITE = https://github.com/Gnurou/drm.git
+LIBDRM_SITE_METHOD = git
 LIBDRM_LICENSE = MIT
+LIBDRM_AUTORECONF = YES
 
 LIBDRM_INSTALL_STAGING = YES
 
@@ -34,6 +38,7 @@ endif
 
 ifeq ($(BR2_PACKAGE_LIBDRM_NOUVEAU),y)
 LIBDRM_CONF_OPTS += --enable-nouveau
+LIBDRM_CONF_OPTS += --enable-tegra-experimental-api
 else
 LIBDRM_CONF_OPTS += --disable-nouveau
 endif

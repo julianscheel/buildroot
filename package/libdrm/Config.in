@@ -32,9 +32,13 @@ config BR2_PACKAGE_LIBDRM_RADEON
 
 config BR2_PACKAGE_LIBDRM_NOUVEAU
 	bool "nouveau"
-	depends on BR2_i386 || BR2_x86_64
 	help
 	  install Nvidia graphics driver
+
+config BR2_PACKAGE_LIBDRM_TEGRA
+	bool "tegra"
+	help
+	  install Nvidia tegra graphics driver
 
 config BR2_PACKAGE_LIBDRM_VMWGFX
 	bool "vmwgfx"
