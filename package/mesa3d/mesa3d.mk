@@ -70,6 +70,7 @@ MESA3D_CONF_OPTS += \
 else
 MESA3D_CONF_OPTS += \
 	--enable-shared-glapi \
+	--enable-gallium-egl \
 	--with-gallium-drivers=$(subst $(space),$(comma),$(MESA3D_GALLIUM_DRIVERS-y))
 endif
 
