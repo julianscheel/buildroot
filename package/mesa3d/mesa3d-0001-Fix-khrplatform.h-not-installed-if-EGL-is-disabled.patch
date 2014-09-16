@@ -1,4 +1,4 @@
-From 83a1afd73f2d0aff9aa11c1754d6d407983afa7d Mon Sep 17 00:00:00 2001
+From 35d4b4cdf67a069951eccf63dbf3fb9693366179 Mon Sep 17 00:00:00 2001
 From: Eric Le Bihan <eric.le.bihan.dev@free.fr>
 Date: Wed, 9 Apr 2014 12:48:36 +0200
 Subject: [PATCH] Fix khrplatform.h not installed if EGL is disabled.
@@ -17,10 +17,10 @@ Signed-off-by: Eric Le Bihan <eric.le.bihan.dev@free.fr>
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/src/egl/main/Makefile.am b/src/egl/main/Makefile.am
-index 60cb600..1cd5cd2 100644
+index 6746bcc..18e6f16 100644
 --- a/src/egl/main/Makefile.am
 +++ b/src/egl/main/Makefile.am
-@@ -126,9 +126,6 @@ pkgconfigdir = $(libdir)/pkgconfig
+@@ -85,9 +85,6 @@ pkgconfigdir = $(libdir)/pkgconfig
  
  pkgconfig_DATA = egl.pc
  
@@ -31,16 +31,17 @@ index 60cb600..1cd5cd2 100644
  egl_HEADERS = \
  	$(top_srcdir)/include/EGL/eglext.h \
 diff --git a/src/mapi/Makefile.am b/src/mapi/Makefile.am
-index ef53803..2a8c555 100644
+index 80ead82..09d1091 100644
 --- a/src/mapi/Makefile.am
 +++ b/src/mapi/Makefile.am
-@@ -40,3 +40,6 @@ endif
- if HAVE_OPENVG
+@@ -211,4 +211,7 @@ if HAVE_OPENVG
  SUBDIRS += vgapi
  endif
-+
+ 
 +khrdir = $(includedir)/KHR
 +khr_HEADERS = $(top_srcdir)/include/KHR/khrplatform.h
++
+ include $(top_srcdir)/install-lib-links.mk
 -- 
-1.9.1
+1.9.3
 
