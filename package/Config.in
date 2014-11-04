@@ -191,6 +191,7 @@ comment "Graphic applications"
 	source "package/gnuplot/Config.in"
 	source "package/jhead/Config.in"
 	source "package/mesa3d-demos/Config.in"
+	source "package/kmscube/Config.in"
 	source "package/rrdtool/Config.in"
 
 comment "Graphic libraries"

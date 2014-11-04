@@ -1,0 +1,6 @@
+config BR2_PACKAGE_KMSCUBE
+	bool "kmscube"
+	help
+	  Rotating cube demo based on kms
+
+	  https://gitorious.org/thierryreding/kmscube
